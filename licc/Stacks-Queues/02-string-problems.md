@@ -82,7 +82,7 @@ Time and Space Complexity : This algorithm has a time and space complexity of O(
 
 
 
-[844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
+Problem 3 [844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
 
 **Solution**:
 
@@ -110,3 +110,146 @@ var backspaceCompare = function(s, t) {
 Time Complexity : O(n)
 
 Space Complexity : O(n)
+
+
+
+Problem 4 [71. Simplify Path](https://leetcode.com/problems/simplify-path/)
+
+**Solution**:
+
+```javascript
+var simplifyPath = function(path) {
+  path = path.split("/");
+  let stack =[];
+  for(let char of path){
+    if( char ===".."){
+
+        if(stack.length){
+            stack.pop()
+        }
+        
+    }else if(char==="." || !char){
+        continue;
+    }else{
+        stack.push(char)
+    }
+  }
+  return "/"+stack.join("/")  
+};
+```
+
+Time : O(n)
+
+Space : O(n)
+
+
+
+Problem 5 [1544. Make The String Great](https://leetcode.com/problems/make-the-string-great/)
+
+**Solution**:
+
+```
+var makeGood = function(s) {
+
+    let stack = [];
+
+    
+
+    for (let char of s) {
+
+        if (
+
+            stack.length &&
+
+            Math.abs(stack[stack.length - 1].charCodeAt(0) - char.charCodeAt(0)) === 32
+
+        ) {
+
+            stack.pop();
+
+        } else {
+
+            stack.push(char);
+
+        }
+
+    }
+
+    return stack.join('');
+
+};
+```
+
+Time and Space Complexity : O(n) , O(n)
+
+Problem 5 [1544. Make The String Great](https://leetcode.com/problems/make-the-string-great/)
+
+**Solution**:
+
+```js
+var makeGood = function(s) {
+
+    let stack = [];
+
+    
+
+    for (let char of s) {
+
+        if (
+
+            stack.length &&
+
+            Math.abs(stack[stack.length - 1].charCodeAt(0) - char.charCodeAt(0)) === 32
+
+        ) {
+
+            stack.pop();
+
+        } else {
+
+            stack.push(char);
+
+        }
+
+    }
+
+    return stack.join('');
+
+};
+```
+
+Time and Space Complexity : O(n) ,O(n)
+
+Problem 6: [2390. Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/)
+
+**Solution**:
+
+```js
+var removeStars = function(s) {
+
+  let stack =[];
+
+  for(let char of s){
+
+    if(stack.length && char==="*"){
+
+        stack.pop();
+
+    }else{
+
+        stack.push(char)
+
+    }
+
+  }
+
+  return stack.join("")  
+
+};
+
+
+```
+
+Time Complexity : O(n)
+
+Space Complexity:O(n)
