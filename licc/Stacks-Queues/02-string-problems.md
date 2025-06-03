@@ -253,3 +253,52 @@ var removeStars = function(s) {
 Time Complexity : O(n)
 
 Space Complexity:O(n)
+
+Problem 7 [735. Asteroid Collision](https://leetcode.com/problems/asteroid-collision/)
+
+**Solution**:
+
+```js
+var asteroidCollision = function(asteroids) {
+
+    let stack =[];
+
+    for(let a of asteroids){
+
+        while(stack.length && a<0 && stack[stack.length-1]>0){
+
+            const diff = a+ stack[stack.length-1];
+
+            if(diff<0){
+
+                stack.pop()
+
+                continue;
+
+            }else if(diff>0){
+
+                a=0
+
+            }else{
+
+                a=0;
+
+                stack.pop()
+
+            }
+
+        }
+
+        if(a!==0){
+
+            stack.push(a)
+
+        }
+
+    }
+
+    return stack
+
+};
+```
+
