@@ -1,20 +1,5 @@
-//declaration
-let stack = [];
+//Given an array nums
 
-//Pushing Elements
-stack.push(1);
-stack.push(2);
-stack.push(3);
-
-//Popping elements
-stack.pop(); //3
-stack.pop(); //2
-
-//Check if empty
-!stack.length;
-
-//check element at top
-stack[stack.length - 1];
-
-//get size
-stack.length;
+let prefix = [nums[0]];
+for (let i = 1; i < nums.length; i++)
+  prefix.push(nums[i] + prefix[prefix.length - 1]);
