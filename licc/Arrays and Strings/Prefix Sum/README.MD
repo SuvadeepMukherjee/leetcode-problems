@@ -26,7 +26,7 @@ for (let i = 1; i < nums.length; i++)
   prefix.push(nums[i] + prefix[prefix.length - 1]);
 ```
 
-#### Q4:Problem 1 
+#### Problem 1 
 
 **Range Sum Querry with Limit** 
 
@@ -72,7 +72,7 @@ Time Complexity : O(n)
 
 Space Complexity : O(n)
 
-####  Q2:Problem 2 
+####  Problem 2 
 
 [2270. Number of Ways to Split Array](https://leetcode.com/problems/number-of-ways-to-split-array/)
 
@@ -109,4 +109,30 @@ var waysToSplitArray = function(nums) {
 Time Complexity : O(n)
 
 Space Complexity : O(n)
+
+#### Problem 3 
+
+[1480. Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
+
+**Solution**:
+
+```js
+var runningSum = function(nums) {
+
+    let prefix =[nums[0]];
+
+    for(let i=1;i<nums.length;i++){
+
+        prefix.push(nums[i]+prefix[prefix.length-1])
+
+    }
+
+    return prefix;
+
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity :O(n)
 
