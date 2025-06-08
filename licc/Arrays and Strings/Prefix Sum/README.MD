@@ -136,3 +136,25 @@ Time Complexity : O(n)
 
 Space Complexity :O(n)
 
+#### Problem 4 
+
+[1413. Minimum Value to Get Positive Step by Step Sum](https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/) 
+
+**Solution**:
+
+```javascript
+var minStartValue = function(nums) {
+    let minVal = 0;
+    let total =0;
+    for(let i=0;i<nums.length;i++){
+        total += nums[i];
+        minVal = Math.min(minVal,total)
+    }
+
+    return 1-minVal
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity : O(1)
