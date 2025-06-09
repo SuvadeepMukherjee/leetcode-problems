@@ -140,3 +140,55 @@ Time Complexity :O(n)
 
 Space Complexitu :O(1)
 
+#### Q4:[392. Is Subsequence](https://leetcode.com/problems/is-subsequence/)
+
+**Solution**:
+
+```javascript
+var isSubsequence = function(s, t) {
+    let i =0;
+    let j=0;
+    while(i<s.length && j<t.length){
+        if(s[i]===t[j])i++;
+        j++;
+
+    }
+    return i===s.length;
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity : O(1)
+
+#### Q5:[344. Reverse String](https://leetcode.com/problems/reverse-string/)
+
+**Solution**:
+
+```js
+var reverseString = function(s) {
+
+    let left =0;
+
+    let right = s.length - 1;
+
+    while(left<right){
+
+        let temp =s[left];
+
+        s[left]=s[right];
+
+        s[right]=temp;
+
+        left++;
+
+        right--
+
+    }
+
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity : O(1)
