@@ -192,3 +192,34 @@ var reverseString = function(s) {
 Time Complexity : O(n)
 
 Space Complexity : O(1)
+
+#### Q6:[977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+
+**Solution**:
+
+```javascript
+var sortedSquares = function(nums) {
+    let arr = new Array(nums.length).fill(0);
+    let left =0;
+    let right = nums.length-1;
+    while(left<right){
+        for(let i=nums.length -1;i>=0;i--){
+        if(Math.abs(nums[left])<Math.abs(nums[right])){
+            arr[i]= nums[right]*nums[right];
+            right--
+        }else{
+            arr[i]=nums[left]*nums[left];
+            left++;
+        }
+    }
+
+    }
+    return arr;
+    
+
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity : O(1)

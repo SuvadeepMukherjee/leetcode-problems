@@ -9,7 +9,7 @@
 | Merge 2 sorted arrays     | ✅      |      |
 | Is Subsequence            | ✅      |      |
 | Reverse String            | ✅      |      |
-| Squares of a sorted array |        |      |
+| Squares of a sorted array | ✅      |      |
 | Reverse only letters      |        |      |
 | Minimum Common Value      |        |      |
 | Move Zeroes               |        |      |
