@@ -1,12 +1,12 @@
-var answerQueries = function (nums, queries, limit) {
-  let prefix = [nums[0]];
-  for (let i = 1; i < nums.length; i++) {
-    prefix.push(nums[i] + prefix[prefix.length - 1]);
+var checkIfPalindrome = function (s) {
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    if (s[left] !== s[right]) {
+      return false;
+    }
+    left++;
+    right--;
   }
-  let ans = [];
-  for (let [x, y] of queries) {
-    let curr = prefix[y] - prefix[x] + nums[x];
-    ans.push(curr < limit);
-  }
-  return ans;
+  return true;
 };

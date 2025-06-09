@@ -4,7 +4,7 @@
 
 | Problem                   | Status | Link |
 | ------------------------- | ------ | ---- |
-| Valid Palindrome          |        |      |
+| Valid Palindrome          | ✅      |      |
 | Two Sum in sorted array   |        |      |
 | Merge 2 sorted arrays     |        |      |
 | Is Subsequence            |        |      |
