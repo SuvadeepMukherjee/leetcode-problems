@@ -1,6 +1,6 @@
 ## 2 Pointers 
 
-Q1:Valid Palindrome 
+#### Q1:Valid Palindrome 
 
 Given a string `s`, return `true` if it is a palindrome, `false` otherwise.
 
@@ -92,4 +92,51 @@ console.log(checkForTarget(arr, target));
 Time Complexity :O(n)
 
 Space Complexity :O(1)
+
+#### Q3:Merge Two Sorted Arrays 
+
+Given two sorted integer arrays `arr1` and `arr2`, return a new array that combines both of them and is also sorted.
+
+```js
+var combine = function(arr1, arr2) {
+}
+```
+
+**Solution**:
+
+```js
+var combine = function (arr1, arr2) {
+  let ans = [];
+
+  let i = 0;
+  let j = 0;
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      ans.push(arr1[i]);
+      i++;
+    } else {
+      ans.push(arr2[j]);
+      j++;
+    }
+  }
+  while (i < arr1.length) {
+    ans.push(arr1[i]);
+    i++;
+  }
+  while (j < arr2.length) {
+    ans.push(arr2[j]);
+    j++;
+  }
+  return ans;
+};
+
+let arr1 = [1, 4, 7, 10];
+let arr2 = [3, 5, 6];
+console.log(combine(arr1, arr2));
+
+```
+
+Time Complexity :O(n)
+
+Space Complexitu :O(1)
 
