@@ -378,3 +378,88 @@ Time Complexity : O(n)
 
 Space Complexity :O(1)
 
+Problem 10:
+
+[283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+
+**Solution**:
+
+```js
+var moveZeroes = function(nums) {
+
+    let l =0;
+
+    for(let r=0;r<nums.length;r++){
+
+        if(nums[r]!==0){
+
+            [nums[l],nums[r]]=[nums[r],nums[l]];
+
+            l++
+
+        }
+
+    }
+
+    
+
+};
+```
+
+Time Complexity :O(n)
+
+Space Complexity :O(1)
+
+Problem 11:
+
+[2000. Reverse Prefix of Word](https://leetcode.com/problems/reverse-prefix-of-word/)
+
+**Solution**:
+
+```js
+var reversePrefix = function(word, ch) {
+
+    let i =0;
+
+    for(let j=0;j<word.length;j++){
+
+        if(word[j]===ch){
+
+            i=j
+
+            break;
+
+        }
+
+        
+
+    }
+
+    if(i===word.length) return word;
+
+    let l =0;
+
+    let r =i;
+
+    let arr = word.split("");
+
+    while(l<r){
+
+        [arr[l],arr[r]]=[arr[r],arr[l]];
+
+        l++;
+
+        r--;
+
+    }
+
+    return arr.join("");
+
+    
+
+};
+```
+
+Time Complexity :O(n)
+
+Space Complexity :O(1)
