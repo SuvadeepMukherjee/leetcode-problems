@@ -273,3 +273,108 @@ var reverse = function(str){
 Time Complexity : O(n)
 
 Space Complexity:O(1)
+
+#### Q8:
+
+[917. Reverse Only Letters](https://leetcode.com/problems/reverse-only-letters/)
+
+**Solution**:
+
+```js
+const isLetter =(c)=>{
+
+    const lowerC = c.toLowerCase();
+
+    const isAlpha = lowerC>="a" && lowerC<="z";
+
+    return isAlpha;
+
+    }
+
+var reverseOnlyLetters = function(s) {
+
+    let arr = s.split("");
+
+    let left =0;
+
+    let right = s.length -1;
+
+    while(left<right){
+
+        const skipLeft = !isLetter(s[left]);
+
+        if(skipLeft){
+
+            left++;
+
+            continue;
+
+        }
+
+        const skipRight =!isLetter(s[right]);
+
+        if(skipRight){
+
+            right--;
+
+            continue;
+
+        }
+
+        [arr[left],arr[right]]=[arr[right],arr[left]];
+
+        left++;
+
+        right--;
+
+    }
+
+    return arr.join("");
+
+};
+```
+
+Time Complexity :O(n)
+
+Space Complexity:O(1)
+
+Problem 9:
+
+[2540. Minimum Common Value](https://leetcode.com/problems/minimum-common-value/)
+
+**Solution**:
+
+```js
+var getCommon = function(nums1, nums2) {
+
+    let i=0;
+
+    let j=0;
+
+    while(i<nums1.length && j<nums2.length){
+
+        if(nums1[i]<nums2[j]){
+
+            i++;
+
+        }else if(nums1[i]>nums2[j]){
+
+            j++;
+
+        }else{
+
+            return nums1[i]
+
+        }
+
+    }
+
+    return -1;
+
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity :O(1)
+

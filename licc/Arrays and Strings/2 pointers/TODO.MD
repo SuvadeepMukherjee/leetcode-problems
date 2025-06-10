@@ -11,8 +11,8 @@
 | Reverse String              | ✅      |      |
 | Squares of a sorted array   | ✅      |      |
 | Reverse words in a string 3 | ✅      |      |
-| Reverse only letters        |        |      |
-| Minimum Common Value        |        |      |
+| Reverse only letters        | ✅      |      |
+| Minimum Common Value        | ✅      |      |
 | Move Zeroes                 |        |      |
 | Reverse Prefix of Word      |        |      |
 
