@@ -223,3 +223,53 @@ var sortedSquares = function(nums) {
 Time Complexity : O(n)
 
 Space Complexity : O(1)
+
+#### Q7:[557. Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)
+
+**Solution**:
+
+```js
+
+var reverseWords = function(s) {
+
+    let arr = s.split(" ");
+
+    for(let i=0;i<arr.length;i++){
+
+        arr[i]= reverse(arr[i]);
+
+    }
+
+    return arr.join(" ");
+
+};
+var reverse = function(str){
+
+   let arr = str.split('');
+
+    let left = 0;
+
+    let right = arr.length - 1;
+
+    while(left < right){
+
+        let tmp = arr[left];
+
+        arr[left] = arr[right];
+
+        arr[right] = tmp;
+
+        left++;
+
+        right--;
+
+    }
+
+    return arr.join('');
+
+}
+```
+
+Time Complexity : O(n)
+
+Space Complexity:O(1)
