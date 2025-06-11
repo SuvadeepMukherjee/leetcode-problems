@@ -171,3 +171,55 @@ Time Complexity :O(n)
 
 Space Complexity :O(1)
 
+#### Q5:Number of valid subarrays 
+
+**Solution**:
+
+Let's say that we are using the sliding window algorithm we have learned and currently have a window `(left, right)`. How many valid windows **end** at index `right`?
+
+There's the current window `(left, right)`, then `(left + 1, right)`, `(left + 2, right)`, and so on until `(right, right)` (only the element at `right`).
+
+You can fix the right bound and then choose any value between `left` and `right` inclusive for the left bound. Therefore, the number of valid windows **ending** at index `right` is equal to the size of the window, which we know is `right - left + 1`.
+
+#### Problem 3 
+
+[713. Subarray Product Less Than K](https://leetcode.com/problems/subarray-product-less-than-k/)
+
+**Solution**:
+
+```js
+var numSubarrayProductLessThanK = function(nums, k) {
+
+    if(k<=1)return 0;
+
+    let left =0;
+
+    let curr =1;
+
+    let ans = 0;
+
+    for(let right =0;right<nums.length;right++){
+
+        curr*=nums[right];
+
+        while(curr>=k){
+
+           curr/=nums[left];
+
+            left++;
+
+        }
+
+        ans += right - left +1;
+
+    }
+
+    return ans;
+
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity : O(1)
+
