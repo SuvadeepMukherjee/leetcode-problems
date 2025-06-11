@@ -1,28 +1,18 @@
-var combine = function (arr1, arr2) {
-  let ans = [];
-
-  let i = 0;
-  let j = 0;
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) {
-      ans.push(arr1[i]);
-      i++;
-    } else {
-      ans.push(arr2[j]);
-      j++;
+var findLength = function (s) {
+  let curr = 0;
+  let max = 0;
+  let left = 0;
+  for (let right = 0; right < s.length; right++) {
+    if (s[right] === "0") curr++;
+    while (curr > 1) {
+      if (s[left] === "0") {
+        curr -= 1;
+      }
+      left++;
     }
+    max = Math.max(max, right - left + 1);
   }
-  while (i < arr1.length) {
-    ans.push(arr1[i]);
-    i++;
-  }
-  while (j < arr2.length) {
-    ans.push(arr2[j]);
-    j++;
-  }
-  return ans;
+  return max;
 };
 
-let arr1 = [1, 4, 7, 10];
-let arr2 = [3, 5, 6];
-console.log(combine(arr1, arr2));
+console.log(findLength("1101100111"));
