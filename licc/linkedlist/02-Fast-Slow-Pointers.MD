@@ -34,3 +34,82 @@ Time Complexity : O(n)
 
 Space Complexity : O(1)
 
+#### Q2:Given the head of a Linked List with an odd number of nodes , return the value of the node in the middle 
+
+For example , given a  Linked List that represents 
+
+1-> 2 -> 3 -> 4 -> 5 
+
+return 3 
+
+```js
+let getMiddle = (head) => {
+
+};
+```
+
+**Solution**:
+
+```js
+let getMiddle = (head) => {
+
+  let slow = head;
+
+  let fast = head;
+
+  while (fast && fast.next) {
+
+    slow = slow.next;
+
+    fast = fast.next.next;
+
+  }
+
+  return slow.val;
+
+};
+```
+
+Time Complexity : O(n)
+
+Space Complexity:O(1)
+
+#### Q3:Given the head of a linked List and an integer K , return the Kth node from the end . For example , given the linked list that represents 1-> 2 -> 3 -> 4 -> 5 and K = 2 return the node with value 4 as it is the 2nd node from the end 
+
+```js
+let findNode = (head,k)=>{
+}
+```
+
+**Solution**:
+
+```js
+let findNode = (head, k) => {
+
+  let slow = head;
+
+  let fast = head;
+
+  for (let i = 0; i < k; i++) {
+
+    fast = fast.next;
+
+  }
+
+  while (fast) {
+
+    slow = slow.next;
+
+    fast = fast.next;
+
+  }
+
+  return slow;
+
+};
+```
+
+Time : O(n)
+
+Space : O(1)
+
