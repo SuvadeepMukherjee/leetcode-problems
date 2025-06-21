@@ -177,3 +177,45 @@ Time : O(n)
 
 Space : O(1)
 
+#### Q6:
+
+[2095. Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/)
+
+**Solution**:
+
+```js
+var deleteMiddle = function(head) {
+
+    if (!head || !head.next) return null;
+
+  let dummy = new ListNode(-1);
+
+  dummy.next = head;
+
+  let slow = head;
+
+  let fast = head;
+
+  while(fast && fast.next){
+
+    dummy = dummy.next
+
+    slow = slow.next;
+
+    fast= fast.next.next;
+
+    
+
+  } 
+
+  dummy.next = dummy.next.next;
+
+  return head; 
+
+};
+```
+
+Time : O(n)
+
+Space : O(1)
+
