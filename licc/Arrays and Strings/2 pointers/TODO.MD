@@ -1,4 +1,4 @@
-## 2 Pointers To do 
+## 2 Pointers To  
 
 
 
