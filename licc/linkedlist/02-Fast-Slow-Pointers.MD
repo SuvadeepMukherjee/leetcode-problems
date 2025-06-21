@@ -113,3 +113,67 @@ Time : O(n)
 
 Space : O(1)
 
+#### Q4:
+
+ [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
+
+**Solution**:
+
+```js
+var middleNode = function(head) {
+
+    let slow = head;
+
+    let fast = head;
+
+    while(fast && fast.next){
+
+        slow = slow.next;
+
+        fast = fast.next.next
+
+    }
+
+    return slow;
+
+};
+```
+
+Time : O(n)
+
+Space : O(1)
+
+#### Q5: 
+
+[83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
+
+**Solution**:
+
+```js
+var deleteDuplicates = function(head) {
+
+    let current = head;
+
+    while(current && current.next){
+
+        if(current.next.val === current.val){
+
+            current.next = current.next.next
+
+        }else{
+
+            current = current.next;
+
+        }
+
+    }
+
+    return head;
+
+};
+```
+
+Time : O(n)
+
+Space : O(1)
+
