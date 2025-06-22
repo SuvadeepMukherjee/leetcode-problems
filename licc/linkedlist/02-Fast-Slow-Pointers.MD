@@ -219,3 +219,78 @@ Time : O(n)
 
 Space : O(1)
 
+#### Q7:
+
+[19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+
+**Solution**:
+
+```js
+var removeNthFromEnd = function (head, n) {
+  let dummy = new ListNode(-1);
+
+  dummy.next = head;
+
+  let a = dummy;
+
+  let fast = head;
+
+  for (let i = 0; i < n; i++) {
+    fast = fast.next;
+  }
+
+  while (fast) {
+    dummy = dummy.next;
+
+    fast = fast.next;
+  }
+
+  dummy.next = dummy.next.next;
+
+  return a.next;
+};
+
+```
+
+Time : O(n)
+
+Space : O(1)
+
+#### Q8:
+
+[82. Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)
+
+**Solution**:
+
+```javascript
+var deleteDuplicates = function(head) {
+    let dummy = new ListNode(-1);
+    dummy.next = head;
+    let before = dummy;
+    let current = head;
+    
+    while (current && current.next) {
+        // If there's a duplicate
+        if (current.val === current.next.val) {
+            // Skip all nodes with the same value
+            while (current && current.next && current.val === current.next.val) {
+                current = current.next;
+            }
+            // Link 'before' to the node after the last duplicate
+            before.next = current.next;
+        } else {
+            // No duplicate found, so just move 'before'
+            before = before.next;
+        }
+        // Move current forward
+        current = current.next;
+    }
+    
+    return dummy.next;
+};
+```
+
+Time : O(n)
+
+Space : O(1)
+
